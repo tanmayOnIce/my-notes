@@ -90,7 +90,7 @@ DI is a technique that involves seting a value of specific field or parameter. I
 3. Injecting through setters (for Optional Dependency)
 
 ## what is circular dependencies ?
-When a component requires another component as dependency. While the second component requires first component as dependency. it is a deadlock.
+When a component requires another component as dependency. While the second component requires first component as dependency. it is a deadlock. So spring app does not start.
 
 ## How Spring selects a bean ?
 1. check if Identifier of parameter matches name of the beans in the context. And wire it.
@@ -98,3 +98,115 @@ When a component requires another component as dependency. While the second comp
 3. Use the bean that has been specified in @Qualifier annotation.
 4. If none of these matches then it fails with Exception.
 
+## what is interface ?
+interface is an abstract structure that is used to specify responsibility. Interface says "What needs to happen". Implementation says "how it should happen".
+
+> A service is a object that implements a use case
+
+## What are some naming convention used in a enterprise spring app ?
+1. Service names ends with 'Service'
+2. Classes that interacts with database are called data access objects they ends with DAO and repository ends with repository.
+3. Something that communicates outside of app is called **proxies**
+
+## where should you use stereotype annotation ?
+Only in the implementation.
+
+## How to make default implementation for a interface ?
+1. Using **@Primary** in the implementation alongside the stereotype annotation.
+2. Use **@Qualifier** while defining the beans. And **@Qualifier** when injecting the bean.
+
+## why there is @Service, @Repository when they are same as @Component ?
+To signify each implementation its responsibility like - 
+1. @Service for use case
+2. @Repository implements a repository responsibility
+3. @Component is a generic bean
+
+## what is scope in spring ? How many scopes are there
+Scope is the way spring manages creation and management of bean lifecycle. There are two scopes -
+1. Singleton (default)
+2. Prototype
+
+## How singleton scope is different from singleton design pattern ?
+Singleton scope is one instance per name. That is it can have multiple instance of same class. Whereas, Singleton design patter create one instance of the class per application.
+
+## what rules should be followed for singleton bean ?
+It must be immutable. As synchronization is discouraged.
+
+## what type of initialization is supported by Spring singleton bean ?
+By default spring creates bean using eager initialization. But can be configured to be lazily initialized.
+
+## How to do lazy initialization ?
+Use @Lazy annotation with stereotype annotation.
+
+## How to use prototype scope ?
+1. With @Bean use **@Scope(BeanDefinition.SCOPE_PROTOTYPE)**. Using this each thread gets it's own instance.
+2. with stereotype instance using **@Scope(BeanDefinition.SCOPE_PROTOTYPE)**
+
+## What precaution to take in prototype scope ?
+**Do not inject prototype directly i.e. Use constructor injection, setter injection, field injection** use context.getBean(CommentProcessor.class);
+
+## What is aspect in programming?
+A way the framework intercepts method calls and possibly alters the execution of methods.
+
+## what is different concepts in Spring AOP ?
+1. **What** code spring needs to run in aspect is aspect
+2. **When** the app should execute the aspect is advice
+3. **Which** method the framework needs to intercept is point cut
+4. **which Event** triggers the execution is join point. For spring it is always method call.
+
+## how spring aop works ?
+When requesting for bean the spring framework will not give reference to the bean rather an object that calls aspect logic. This is called **weaving**.
+
+## what are the steps to create aspects ?
+1. Add @EnableAspectJAutoProxy
+2. Create a class with @Aspect (It is not a stereo type annotation) and make it a bean
+3. Define a method that will implement the aspect logic and tell Spring when and which method to intercept.
+4. Implement the aspect logic.
+   
+## Give an example of aspect ?
+
+    @Aspect
+    public class LoggingAspect {
+     @Around("execution(* services.*.*(..))")
+     public void log(ProceedingJoinPoint joinPoint) {
+     joinPoint.proceed();
+     }
+    }
+
+The expression inside @Around is called AspectJ Point cut Language.
+ProceedingJoinPoint parameter represents intercepted method. It is used to delegate to actual method. It must be called.
+
+## what does execution(* services.*.*(..)) mean ?
+
+execution -> says when the method is called
+* -> return type can be of any type
+services -> package is services
+\* -> intercepted method can be of any class
+\* -> interceptor method name can be any
+(..) -> intercept method can be of any number of arguments 
+
+## what are the different aspects you can use ?
+1. @Before
+2. @AfterReturning
+3. @AfterThrowing
+4. @After
+5. @Around
+
+## How to use @AfterReturning ?
+
+@Aspect
+public class LoggingAspect {
+    private Logger logger = Logger.getLogger(LoggingAspect.class.getName());
+
+    @AfterReturning(value = "@annotation(ToLog))",returning = "returnedValue")
+    public void log(Object returnedValue) {
+        logger.log("Method executed and returned "+returnedValue);
+    }
+}
+
+## What question to keep in mind while working with multiple aspects ?
+* In which order the spring execute these aspects?
+* Does the execution order matter?
+
+## In which order Spring runs aspect ?
+Spring does not guarantee the same execution sequence. To keep order use @Order. If the value is less then it will run first.
