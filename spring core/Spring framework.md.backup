@@ -210,4 +210,3 @@ public class LoggingAspect {
 
 ## In which order Spring runs aspect ?
 Spring does not guarantee the same execution sequence. To keep order use @Order. If the value is less then it will run first.
-
