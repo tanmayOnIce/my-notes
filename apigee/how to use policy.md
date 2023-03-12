@@ -1,0 +1,11 @@
+## what can you do with assign message ?
+
+remember when the path is carry forward to target endpoint to not do that we need to use assign message.
+
+We can do before target endpoint call . 
+
+
+## what to do when we want to ddd a value from header to url parameter ?
+
+1.keep the path as /getCustomerById2/*
+  

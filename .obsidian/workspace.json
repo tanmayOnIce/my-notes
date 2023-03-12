@@ -8,91 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "53c5564ce842a89d",
+            "id": "c708c4dd6a1cfd26",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "elixir/types/Basic types.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e0a28db63f0ba4c6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "elixir/types/Basic types.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fb8ba907208c33d6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "elixir/pattern match/Pipe Operator.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e28af5430b45da83",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "elixir/control flow/If Structure.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f22c3657a6408259",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "elixir/Guard Pattern/Guard Function.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1a0fbf5d8af197dd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "elixir/function/recursion.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e1d81e1edd7bc2bf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "elixir/pattern match/pattern matching.md",
+                "file": "future plans/books.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -158,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "elixir/types/Basic types.md",
+                "file": "future plans/books.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "elixir/types/Basic types.md",
+                "file": "future plans/books.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "elixir/types/Basic types.md"
+                "file": "future plans/books.md"
               }
             }
           }
@@ -219,29 +146,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6f3895ff59453921",
+  "active": "c708c4dd6a1cfd26",
   "lastOpenFiles": [
+    "planing/Things To Learn.md",
+    "elixir/function/recursion.md",
+    "elixir/Guard Pattern/Guard Function.md",
+    "elixir/control flow/If Structure.md",
+    "book notes",
+    "future plans/books.md",
+    "planing/Ideas.md",
+    "elixir/types/Basic types.md",
+    "future plans",
     "elixir/types/Type Specification.md",
     "elixir/Untitled",
-    "elixir/types/Basic types.md",
     "elixir/types",
     "elixir/pattern match/Pipe Operator.md",
     "elixir/pattern match/pattern matching.md",
     "elixir/pattern match",
-    "elixir/control flow/If Structure.md",
-    "elixir/Guard Pattern/Guard Function.md",
-    "elixir/function/recursion.md",
     "elixir/Guard Pattern",
     "elixir/control flow",
     "elixir/function",
     "elixir/function/functions.md",
     "meeting scripts/LOS/Daily Scrum",
     "meeting scripts/LOS",
-    "meeting scripts",
-    "planing/Ideas.md",
-    "planing/Things To Learn.md",
-    "office apigee/openapi document structure.md",
-    "planing",
+    "apigee/openapi document structure.md",
     "office apigee/soap service message verification.md",
     "Untitled.canvas",
     "2023-03-09.md"
